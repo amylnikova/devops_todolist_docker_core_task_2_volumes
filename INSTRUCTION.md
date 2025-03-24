@@ -41,12 +41,12 @@ docker run -d -p 3306:3306 --name my-mysql -v local-mysql-data:/var/lib/mysql my
 to run App container and connect it to the MySQL container, run:
 
 ```sh
-docker run -d --name my-todoapp --link my-mysql:mysql -p 8000:8000 amylnikova/todoapp:2.0.0
+docker run -d --name my-todoapp --link my-mysql:mysql -p 8080:8080 amylnikova/todoapp:2.0.0
 ```
 
 - `--name my-todoapp` names the App container “my-todoapp.”
 - `--link my-mysql:mysql` links the App container to the running MySQL container (my-mysql) and aliases it as mysql. This makes the MySQL container accessible from the app container by hostname mysql.
-- `-p 8000:8000` exposes port 8000 on your host, where the app will be accessible.
+- `-p 8080:8080` exposes port 8080 on your host, where the app will be accessible.
 
 ## 5️⃣ Checking Running Containers
 
